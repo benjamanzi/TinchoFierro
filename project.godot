@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Tincho Fierro"
+run/main_scene="uid://bt44yv0pv4mkv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [file_customization]

@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://bt44yv0pv4mkv"]
+[gd_scene load_steps=8 format=3 uid="uid://bt44yv0pv4mkv"]
+
+[ext_resource type="PackedScene" uid="uid://dgfyh0awgsk6i" path="res://scenes/level1/platform.tscn" id="1_h8cug"]
+[ext_resource type="PackedScene" uid="uid://c7uyhq28h0da2" path="res://scenes/level1/small_platform.tscn" id="2_8702e"]
+[ext_resource type="PackedScene" uid="uid://m01jmut65s7i" path="res://scenes/level1/moving_platform.tscn" id="3_iscdl"]
+[ext_resource type="PackedScene" uid="uid://c805tn1wbcrfn" path="res://scenes/level1/trap.tscn" id="4_wlolr"]
+[ext_resource type="PackedScene" uid="uid://daj25m1qd80bs" path="res://scenes/level1/trigger.tscn" id="5_87jvc"]
+[ext_resource type="PackedScene" uid="uid://bxnl126rj7clt" path="res://scenes/level1/coin.tscn" id="6_jmggy"]
+[ext_resource type="PackedScene" uid="uid://bo0a50rqjs355" path="res://scenes/player/player.tscn" id="7_v4nxl"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_h8cug")]
+position = Vector2(0, 635)
+
+[node name="Small_platform" parent="." instance=ExtResource("2_8702e")]
+position = Vector2(338, 350)
+
+[node name="Small_platform2" parent="." instance=ExtResource("2_8702e")]
+position = Vector2(637, 350)
+
+[node name="Moving_platform" parent="." instance=ExtResource("3_iscdl")]
+position = Vector2(516, 195)
+
+[node name="Moving_platform2" parent="." instance=ExtResource("3_iscdl")]
+position = Vector2(577, 194)
+
+[node name="Trap" parent="." instance=ExtResource("4_wlolr")]
+position = Vector2(520, 373)
+
+[node name="Trigger" parent="." instance=ExtResource("5_87jvc")]
+position = Vector2(1398, 600)
+
+[node name="Small_platform3" parent="." instance=ExtResource("2_8702e")]
+position = Vector2(1319, 634)
+
+[node name="Small_platform4" parent="." instance=ExtResource("2_8702e")]
+position = Vector2(850, 494)
+
+[node name="Coin" parent="." instance=ExtResource("6_jmggy")]
+position = Vector2(46, 291)
+scale = Vector2(0.151552, 0.151348)
+
+[node name="Small_platform5" parent="." instance=ExtResource("2_8702e")]
+position = Vector2(-25, 330)
+
+[node name="Player" parent="." instance=ExtResource("7_v4nxl")]
+position = Vector2(61, 611)
+
+[node name="Trap2" parent="." instance=ExtResource("4_wlolr")]
+position = Vector2(581, 373)
