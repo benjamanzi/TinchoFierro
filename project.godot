@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [file_customization]
 
 folder_colors={
-"res://scenes/HUD/": "blue",
+"res://assets/": "teal",
+"res://scenes/": "yellow",
 "res://scenes/main/": "yellow",
-"res://scripts/enemies/": "red",
-"res://scripts/player/": "green"
+"res://scripts/": "pink"
 }
