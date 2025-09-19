@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://6atjsif2qu0e"]
+
+[ext_resource type="Texture2D" uid="uid://bct8bswlqaw47" path="res://assets/sprites/roca.png" id="1_efccy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqhce"]
+size = Vector2(57, 90.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huosi"]
+size = Vector2(100.25, 51.375)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kospd"]
+radius = 3.0
+height = 79.919
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xqej"]
+radius = 4.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_efccy"]
+height = 61.0667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vqhce"]
+height = 86.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huosi"]
+radius = 4.0
+height = 44.0
+
+[node name="rock" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(32.1, 17.56)
+scale = Vector2(0.5, 0.576)
+texture = ExtResource("1_efccy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-66.5, 65.75)
+shape = SubResource("RectangleShape2D_vqhce")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(25.875, -29)
+shape = SubResource("RectangleShape2D_huosi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-58, -1)
+rotation = 1.02974
+shape = SubResource("CapsuleShape2D_kospd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(123, 46)
+rotation = -0.621337
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_7xqej")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(80, -6)
+rotation = -0.598648
+shape = SubResource("CapsuleShape2D_efccy")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(25, -57)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vqhce")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(23, -71)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_huosi")

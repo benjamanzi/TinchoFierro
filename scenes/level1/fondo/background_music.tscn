@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgryx5hxwj6xr"]
+
+[ext_resource type="AudioStream" uid="uid://c4imfln5tje4w" path="res://assets/sounds/Amor Salvaje (El Chaqueño Palavecino)  Karaoke - Pista (Letra).mp3" id="1_08fla"]
+
+[node name="Background_music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_08fla")
+autoplay = true
+parameters/looping = true

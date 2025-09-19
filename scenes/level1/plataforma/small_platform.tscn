@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7uyhq28h0da2"]
+
+[ext_resource type="Texture2D" uid="uid://cglv81m8nagv3" path="res://assets/sprites/piso_flotante.png" id="1_f0xm3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndvlt"]
+size = Vector2(173, 28)
+
+[node name="Small_platform" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(76.5, 4)
+shape = SubResource("RectangleShape2D_ndvlt")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(0.533333, 1, 1, 1)
+self_modulate = Color(0.597498, 0.712788, 1, 1)
+position = Vector2(76.9688, 1.53125)
+scale = Vector2(0.266001, 0.15563)
+texture = ExtResource("1_f0xm3")

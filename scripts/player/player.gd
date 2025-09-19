@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300
-const JUMP_VELOCITY = -530
+const JUMP_VELOCITY = -450
 var inventory = {}
 
 func _physics_process(delta: float) -> void: 
@@ -16,6 +16,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
 
-func add_to_inventory(itemName):
-	inventory.append(itemName)
-	print("inventory: ", inventory)
+func add_to_inventory(itemName, value):
+	# Si el ítem ya está en el inventario, suma su valor.
+	if inventory.has(itemName):
+		inventory[itemName] += value
+	# Si no, agrégalo con su valor inicial.
+	else:
+		inventory[itemName] = value
+	print("Inventario: ", inventory)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://daj25m1qd80bs"]
+
+[ext_resource type="Script" uid="uid://dlm5m6gnhfyrg" path="res://scripts/level1/trigger.gd" id="1_p6qnl"]
+[ext_resource type="Texture2D" uid="uid://d32tetiuj71s" path="res://assets/sprites/boton_normal.png" id="2_6obka"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6obka"]
+radius = 13.0
+height = 40.0
+
+[node name="Trigger" type="Node2D" groups=["trampa"]]
+script = ExtResource("1_p6qnl")
+
+[node name="Area2D" type="Area2D" parent="." groups=["trampa"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1, 14)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_6obka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6obka")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

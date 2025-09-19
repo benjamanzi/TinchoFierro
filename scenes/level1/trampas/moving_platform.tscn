@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://m01jmut65s7i"]
+
+[ext_resource type="Texture2D" uid="uid://r1isd41o5xbx" path="res://assets/sprites/muro.png" id="1_remhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1v2d"]
+size = Vector2(56, 179)
+
+[node name="Moving_platform" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(18, 79.5)
+shape = SubResource("RectangleShape2D_o1v2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(18, 80)
+rotation = 1.5708
+scale = Vector2(0.993618, 0.429285)
+texture = ExtResource("1_remhm")

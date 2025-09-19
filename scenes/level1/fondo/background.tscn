@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://biufp3nph5e53"]
+
+[ext_resource type="Texture2D" uid="uid://bwsvijm6et1wh" path="res://assets/sprites/llanura_oscura.jpg" id="1_e0gbh"]
+
+[node name="background" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_e0gbh")

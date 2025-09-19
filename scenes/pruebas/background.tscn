@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://wjuhtovj7yww"]
+
+[ext_resource type="Texture2D" uid="uid://dgkqg83wtsdiv" path="res://assets/sprites/llanura.webp" id="1_hbvj5"]
+[ext_resource type="Texture2D" uid="uid://cgb0f0n867ob" path="res://assets/sprites/solo_llanura.png" id="2_orft7"]
+
+[node name="background" type="ParallaxBackground"]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.35, 0.35)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("1_hbvj5")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1, -0.500002)
+scale = Vector2(1.20664, 1.21011)
+texture = ExtResource("2_orft7")

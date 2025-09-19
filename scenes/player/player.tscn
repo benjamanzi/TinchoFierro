@@ -1,22 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo0a50rqjs355"]
+[gd_scene load_steps=5 format=3 uid="uid://bo0a50rqjs355"]
 
 [ext_resource type="Script" uid="uid://km3wfxj4fvd6" path="res://scripts/player/player.gd" id="1_ixdr0"]
-[ext_resource type="Texture2D" uid="uid://dwhbm0pf7ubts" path="res://assets/sprites/cápsula.png" id="2_3uqci"]
+[ext_resource type="Texture2D" uid="uid://b48h2q47ocw52" path="res://assets/sprites/Gaucho_player.png" id="2_dovo2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xppcm"]
-radius = 8.0
-height = 28.0
+radius = 9.0
+height = 46.0
+
+[sub_resource type="GDScript" id="GDScript_dovo2"]
+script/source = "extends Camera2D
+# Este script podría ir en el nodo Camera2D o en el Player
+
+# Variable para almacenar la posición vertical inicial de la cámara
+var initial_y_position
+
+# El personaje al que seguirá la cámara
+@export var player: CharacterBody2D
+
+func _ready():
+	# Aseguramos que la cámara siga al jugador
+	if player:
+		initial_y_position = global_position.y
+
+func _physics_process(_delta):
+	if player:
+		# Actualizamos la posición horizontal (x) de la cámara
+		# para que coincida con la del jugador
+		global_position.x = player.global_position.x
+		
+		# Mantenemos la posición vertical (y) de la cámara
+		# en su valor inicial
+		global_position.y = initial_y_position
+"
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ixdr0")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -2)
+scale = Vector2(0.1, 0.104)
+texture = ExtResource("2_dovo2")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_xppcm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7.62939e-06, 2.38419e-06)
-rotation = 0.6353
-scale = Vector2(0.113936, 0.117434)
-texture = ExtResource("2_3uqci")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+script = SubResource("GDScript_dovo2")
+player = NodePath("..")

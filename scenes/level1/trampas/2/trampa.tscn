@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://slgedx3g76x1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltgir"]
+size = Vector2(139, 20)
+
+[node name="Trampa" type="StaticBody2D" groups=["soporte_de_paredes"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(59.5, 0)
+shape = SubResource("RectangleShape2D_ltgir")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw30vddai05r7"]
+
+[ext_resource type="Texture2D" uid="uid://cxkdge11hgeo7" path="res://assets/sprites/2-Pesos.png" id="1_pilot"]
+[ext_resource type="Script" uid="uid://djk4iknsvqbgi" path="res://scripts/level1/coin_2_pesos.gd" id="2_qqgjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhmf1"]
+radius = 150.52
+
+[node name="Coin2pesos" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_pilot")
+script = ExtResource("2_qqgjt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rhmf1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
