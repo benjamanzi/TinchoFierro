@@ -1,10 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bt44yv0pv4mkv"]
+[gd_scene load_steps=14 format=3 uid="uid://bt44yv0pv4mkv"]
 
 [ext_resource type="PackedScene" uid="uid://dgfyh0awgsk6i" path="res://scenes/level1/plataforma/platform.tscn" id="1_h8cug"]
 [ext_resource type="PackedScene" uid="uid://c7uyhq28h0da2" path="res://scenes/level1/plataforma/small_platform.tscn" id="2_8702e"]
 [ext_resource type="PackedScene" uid="uid://m01jmut65s7i" path="res://scenes/level1/trampas/moving_platform.tscn" id="3_iscdl"]
-[ext_resource type="PackedScene" uid="uid://c805tn1wbcrfn" path="res://scenes/level1/trampas/1/trap.tscn" id="4_wlolr"]
-[ext_resource type="PackedScene" uid="uid://daj25m1qd80bs" path="res://scenes/level1/trampas/1/trigger.tscn" id="5_87jvc"]
 [ext_resource type="PackedScene" uid="uid://bxnl126rj7clt" path="res://scenes/level1/monedas/coin.tscn" id="6_jmggy"]
 [ext_resource type="PackedScene" uid="uid://bo0a50rqjs355" path="res://scenes/player/player.tscn" id="7_v4nxl"]
 [ext_resource type="PackedScene" uid="uid://6atjsif2qu0e" path="res://scenes/level1/plataforma/rock.tscn" id="8_8702e"]
@@ -13,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dw30vddai05r7" path="res://scenes/level1/monedas/coin_2_pesos.tscn" id="11_87jvc"]
 [ext_resource type="PackedScene" uid="uid://cjqmd2lmfde7d" path="res://scenes/level1/monedas/coin_50_centavos.tscn" id="12_jmggy"]
 [ext_resource type="PackedScene" uid="uid://bgryx5hxwj6xr" path="res://scenes/level1/fondo/background_music.tscn" id="13_v4nxl"]
-[ext_resource type="PackedScene" uid="uid://slgedx3g76x1" path="res://scenes/level1/trampas/2/trampa.tscn" id="14_t107e"]
-[ext_resource type="PackedScene" uid="uid://bxof31lp4j0ks" path="res://scenes/level1/trampas/2/trigger_2.tscn" id="15_eagek"]
+[ext_resource type="PackedScene" uid="uid://slgedx3g76x1" path="res://scenes/level1/trampas/utiles/trampa.tscn" id="14_t107e"]
+[ext_resource type="PackedScene" uid="uid://bxof31lp4j0ks" path="res://scenes/level1/trampas/utiles/trigger_2.tscn" id="15_eagek"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(601, 308)
@@ -46,9 +44,6 @@ position = Vector2(977, -185)
 [node name="Moving_platform2" parent="." instance=ExtResource("3_iscdl")]
 position = Vector2(1035, -185)
 
-[node name="Trap" parent="." instance=ExtResource("4_wlolr")]
-position = Vector2(1417, -267)
-
 [node name="Small_platform3" parent="." instance=ExtResource("2_8702e")]
 position = Vector2(-1043, 136)
 
@@ -62,9 +57,6 @@ scale = Vector2(0.1, 0.099)
 [node name="Small_platform5" parent="." instance=ExtResource("2_8702e")]
 position = Vector2(1387, 20)
 
-[node name="Trap2" parent="." instance=ExtResource("4_wlolr")]
-position = Vector2(1367, -273)
-
 [node name="rock" parent="." instance=ExtResource("8_8702e")]
 position = Vector2(-486, 131)
 
@@ -72,7 +64,7 @@ position = Vector2(-486, 131)
 position = Vector2(1090, 226)
 
 [node name="Small_platform6" parent="." instance=ExtResource("2_8702e")]
-position = Vector2(947, 408)
+position = Vector2(947, 406)
 
 [node name="barrera_invisible" parent="." instance=ExtResource("10_wlolr")]
 position = Vector2(2058, -128)
@@ -102,20 +94,12 @@ position = Vector2(-2014, -24)
 position = Vector2(-2676, 129)
 
 [node name="Player" parent="." instance=ExtResource("7_v4nxl")]
-position = Vector2(316, 18)
-
-[node name="Coin2pesos" parent="." instance=ExtResource("11_87jvc")]
-position = Vector2(1801, -100)
+position = Vector2(316, 16)
 
 [node name="Coin50centavos" parent="." instance=ExtResource("12_jmggy")]
 position = Vector2(-1944, -67)
 
-[node name="Trigger" parent="." instance=ExtResource("5_87jvc")]
-position = Vector2(-1960, -185)
-
 [node name="Background_music" parent="." instance=ExtResource("13_v4nxl")]
-position = Vector2(-92, -286)
-max_distance = 4096.0
 
 [node name="Small_platform11" parent="." instance=ExtResource("2_8702e")]
 position = Vector2(541, 11)
@@ -127,4 +111,7 @@ position = Vector2(-44, 122)
 position = Vector2(959, -4)
 
 [node name="trigger2" parent="." groups=["soporte_de_paredes"] instance=ExtResource("15_eagek")]
-position = Vector2(-2323, 26)
+position = Vector2(-2289, 28)
+
+[node name="Coin2pesos" parent="." instance=ExtResource("11_87jvc")]
+position = Vector2(1800, -109)
